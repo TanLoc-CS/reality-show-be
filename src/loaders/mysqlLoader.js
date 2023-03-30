@@ -16,6 +16,6 @@ export default () =>
 		if (!err) {
 			console.log("[INFO] DBS: Databse connected...");
 		} else {
-			console.error("[ERR] DBS:", err);
+			console.error("[DBS]", err);
 		}
 	});
