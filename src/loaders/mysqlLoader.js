@@ -1,10 +1,13 @@
 import { createConnection } from "mysql";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export const mysqlConnection = createConnection({
-	host: "localhost",
-	user: "root",
-	password: "210205",
-	database: "REALITYSHOW",
+	host: process.env.DB_HOST,
+	user: process.env.DB_USER,
+	password: process.env.DB_PASSWORD,
+	database: process.env.DB_NAME,
 	multipleStatements: true,
 });
 
@@ -16,7 +19,3 @@ export default () =>
 			console.error("[ERR] DBS:", err);
 		}
 	});
-// process.env.DB_HOST ||
-// process.env.DB_USER ||
-// process.env.DB_PASSWORD ||
-// process.env.DB_NAME ||
